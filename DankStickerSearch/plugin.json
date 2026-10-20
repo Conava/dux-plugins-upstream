@@ -3,7 +3,7 @@
     "name": "Sticker Search",
     "description": "Search and browse stickers powered by Klipy",
     "version": "1.0.5",
-    "author": "Avenge Media",
+    "author": "Dux Labs",
     "icon": "sentiment_satisfied",
     "type": "launcher",
     "trigger": ":s",

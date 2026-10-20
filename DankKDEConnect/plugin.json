@@ -4,7 +4,7 @@
     "description": "Control connected devices via KDE Connect or Valent - view battery, send files, find phone, and more",
     "version": "3.0.0",
     "license": "MIT",
-    "author": "Avenge Media",
+    "author": "Dux Labs",
     "icon": "devices",
     "firstParty": true,
     "component": "./DankKDEConnect.qml",
