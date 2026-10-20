@@ -6,7 +6,7 @@
     "Audio Output": "Audio-uitvoer"
   },
   "Battery": {
-    "Battery": "Batterij"
+    "Battery": "Accu"
   },
   "Browse Files": {
     "Browse Files": "Bestanden doorbladeren"
@@ -24,7 +24,7 @@
     "Enter URI or text to share": "Voer URI of tekst in om te delen"
   },
   "Excellent": {
-    "Excellent": ""
+    "Excellent": "Uitstekend"
   },
   "Failed to accept pairing": {
     "Failed to accept pairing": "Accepteren van koppeling mislukt"
@@ -39,10 +39,10 @@
     "Failed to reject pairing": "Weigeren van koppeling mislukt"
   },
   "Failed to ring device": {
-    "Failed to ring device": "Klingelen van apparaat mislukt"
+    "Failed to ring device": "Laten overgaan van apparaat mislukt"
   },
   "Failed to send SMS": {
-    "Failed to send SMS": "Verzenden van SMS mislukt"
+    "Failed to send SMS": "Verzenden van sms mislukt"
   },
   "Failed to send clipboard": {
     "Failed to send clipboard": "Verzenden van klembord mislukt"
@@ -57,7 +57,7 @@
     "Failed to share": "Delen mislukt"
   },
   "Fair": {
-    "Fair": ""
+    "Fair": "Redelijk"
   },
   "File": {
     "File": "Bestand"
@@ -87,7 +87,7 @@
     "Next": "Volgende"
   },
   "No Signal": {
-    "No Signal": ""
+    "No Signal": "Geen signaal"
   },
   "No devices": {
     "No devices": "Geen apparaten"
@@ -165,7 +165,7 @@
     "Rewind 10s": "10s terug"
   },
   "Ring": {
-    "Ring": "Klingelen"
+    "Ring": "Laten overgaan"
   },
   "Ringing %1...": {
     "Ringing %1...": "%1 laten overgaan..."
@@ -174,7 +174,7 @@
     "SMS": "Sms"
   },
   "SMS sent successfully": {
-    "SMS sent successfully": "SMS succesvol verzonden"
+    "SMS sent successfully": "Sms succesvol verzonden"
   },
   "Select File to Send": {
     "Select File to Send": "Selecteer bestand om te verzenden"
@@ -228,7 +228,7 @@
     "Verification": "Verificatie"
   },
   "Weak": {
-    "Weak": ""
+    "Weak": "Zwak"
   },
   "device": {
     "device": "apparaat"

@@ -66,7 +66,7 @@
     "File received from %1": "Fájl érkezett innen: %1"
   },
   "Forward 10s": {
-    "Forward 10s": "Előretekerés 10 mp-cel"
+    "Forward 10s": "Előretekerés 10 másodperccel"
   },
   "Good": {
     "Good": "Jó"
@@ -162,7 +162,7 @@
     "Request Pairing": "Párosítás kérése"
   },
   "Rewind 10s": {
-    "Rewind 10s": "Visszatekerés 10 mp-cel"
+    "Rewind 10s": "Visszatekerés 10 másodperccel"
   },
   "Ring": {
     "Ring": "Megcsörgetés"
