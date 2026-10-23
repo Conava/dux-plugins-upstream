@@ -203,7 +203,7 @@ PluginComponent {
             }
             if (root.playCompletionSound && SettingsData.soundsEnabled)
                 AudioService.playNormalNotificationSound();
-            Quickshell.execDetached(["sh", "-c", "notify-send 'Pomodoro Complete' 'Time for a " + (isLongBreak ? "long" : "short") + " break!' -u normal"]);
+            Quickshell.execDetached(["dms", "notify", "--urgency", "normal", "Pomodoro Complete", "Time for a " + (isLongBreak ? "long" : "short") + " break!"]);
 
             if (isLongBreak) {
                 root.startLongBreak(root.autoStartBreaks);
@@ -213,7 +213,7 @@ PluginComponent {
         } else {
             if (root.playCompletionSound && SettingsData.soundsEnabled)
                 AudioService.playNormalNotificationSound();
-            Quickshell.execDetached(["sh", "-c", "notify-send 'Break Complete' 'Ready for another pomodoro?' -u normal"]);
+            Quickshell.execDetached(["dms", "notify", "--urgency", "normal", "Break Complete", "Ready for another pomodoro?"]);
             root.startWork(root.autoStartPomodoros);
         }
     }
