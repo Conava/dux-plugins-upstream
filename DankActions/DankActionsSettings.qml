@@ -207,7 +207,7 @@ PluginSettings {
                 DankTextField {
                     id: clickCommandField
                     width: parent.width
-                    placeholderText: "e.g., notify-send 'Clicked!' or cycle-power-profile.sh"
+                    placeholderText: "e.g., dms notify 'Clicked!' or cycle-power-profile.sh"
                     keyNavigationBacktab: displayCommandField
                     keyNavigationTab: middleClickCommandField
                     onFocusStateChanged: function(hasFocus) {
@@ -238,7 +238,7 @@ PluginSettings {
                 DankTextField {
                     id: middleClickCommandField
                     width: parent.width
-                    placeholderText: "e.g., notify-send 'Middle clicked!'"
+                    placeholderText: "e.g., dms notify 'Middle clicked!'"
                     keyNavigationBacktab: clickCommandField
                     keyNavigationTab: rightClickCommandField
                     onFocusStateChanged: function(hasFocus) {
@@ -261,7 +261,7 @@ PluginSettings {
                 DankTextField {
                     id: rightClickCommandField
                     width: parent.width
-                    placeholderText: "e.g., notify-send 'Right clicked!'"
+                    placeholderText: "e.g., dms notify 'Right clicked!'"
                     keyNavigationBacktab: middleClickCommandField
                     keyNavigationTab: updateIntervalField
                     onFocusStateChanged: function(hasFocus) {
@@ -696,7 +696,7 @@ PluginSettings {
                     color: Theme.surfaceText
                 }
                 StyledText {
-                    text: "Display: uptime -p | sed 's/up //'\nClick: notify-send \"Uptime\" \"$(uptime -p)\""
+                    text: "Display: uptime -p | sed 's/up //'\nClick: dms notify \"Uptime\" \"$(uptime -p)\""
                     font.pixelSize: Theme.fontSizeSmall
                     font.family: "monospace"
                     color: Theme.surfaceVariantText
@@ -712,7 +712,7 @@ PluginSettings {
                     color: Theme.surfaceText
                 }
                 StyledText {
-                    text: "Display: echo \"Hello $(whoami)!\"\nClick: notify-send \"Hi!\" \"Welcome back!\""
+                    text: "Display: echo \"Hello $(whoami)!\"\nClick: dms notify \"Hi!\" \"Welcome back!\""
                     font.pixelSize: Theme.fontSizeSmall
                     font.family: "monospace"
                     color: Theme.surfaceVariantText
