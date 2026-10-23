@@ -3,7 +3,7 @@
     "name": "Hyprland Window Switcher",
     "description": "Switch between Hyprland windows with live previews",
     "version": "1.0.0",
-    "author": "Avenge Media",
+    "author": "Dux Labs",
     "icon": "view_carousel",
     "type": "launcher",
     "trigger": "!",

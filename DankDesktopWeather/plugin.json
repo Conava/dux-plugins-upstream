@@ -4,7 +4,7 @@
     "description": "Feature-rich weather widget with current conditions, forecasts, and multiple view modes",
     "version": "1.0.1",
     "license": "MIT",
-    "author": "Avenge Media",
+    "author": "Dux Labs",
     "icon": "partly_cloudy_day",
     "firstParty": true,
     "type": "desktop",

@@ -74,7 +74,7 @@ PluginComponent {
             property string notifyUrgency: "normal"
             property string notifyIcon: "battery_alert"
 
-            command: ["dms", "notify", "--app", "DankMaterialShell", "--icon", notifyIcon, "--urgency", notifyUrgency, notifyTitle, notifyMessage]
+            command: ["dms", "notify", "--app", "Dux Shell", "--icon", notifyIcon, "--urgency", notifyUrgency, notifyTitle, notifyMessage]
 
             onExited: exitCode => {
                 if (exitCode !== 0) {

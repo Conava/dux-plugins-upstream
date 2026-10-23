@@ -24,7 +24,7 @@
     "Enter URI or text to share": "Add meg a megosztani kívánt URI-t vagy szöveget"
   },
   "Excellent": {
-    "Excellent": ""
+    "Excellent": "Kiváló"
   },
   "Failed to accept pairing": {
     "Failed to accept pairing": "Nem sikerült a párosítás elfogadása"
@@ -57,7 +57,7 @@
     "Failed to share": "Nem sikerült a megosztás"
   },
   "Fair": {
-    "Fair": ""
+    "Fair": "Közepes"
   },
   "File": {
     "File": "Fájl"
@@ -66,7 +66,7 @@
     "File received from %1": "Fájl érkezett innen: %1"
   },
   "Forward 10s": {
-    "Forward 10s": "Előretekerés 10 mp-cel"
+    "Forward 10s": "Előretekerés 10 másodperccel"
   },
   "Good": {
     "Good": "Jó"
@@ -87,7 +87,7 @@
     "Next": "Következő"
   },
   "No Signal": {
-    "No Signal": ""
+    "No Signal": "Nincs jel"
   },
   "No devices": {
     "No devices": "Nincsenek eszközök"
@@ -162,7 +162,7 @@
     "Request Pairing": "Párosítás kérése"
   },
   "Rewind 10s": {
-    "Rewind 10s": "Visszatekerés 10 mp-cel"
+    "Rewind 10s": "Visszatekerés 10 másodperccel"
   },
   "Ring": {
     "Ring": "Megcsörgetés"
@@ -228,7 +228,7 @@
     "Verification": "Ellenőrzés"
   },
   "Weak": {
-    "Weak": ""
+    "Weak": "Gyenge"
   },
   "device": {
     "device": "eszköz"
