@@ -12,6 +12,7 @@ import "./components"
 import "./services"
 import QtQuick.Effects
 import QtQuick.Shapes
+import qs.DCommon.Widgets
 
 PluginComponent {
     id: root
@@ -799,7 +800,7 @@ PluginComponent {
                     height: phoneIcon.height
                     anchors.verticalCenter: parent.verticalCenter
 
-                    DankIcon {
+                    DIcon {
                         id: phoneIcon
                         name: root.hasDevice && root.selectedDevice.isReachable ? "smartphone" : "phonelink_off"
                         size: Theme.barIconSize(root.barThickness, -4)
@@ -812,7 +813,7 @@ PluginComponent {
                         }
                     }
 
-                    DankIcon {
+                    DIcon {
                         visible: root.hasDevice && root.selectedDevice?.isReachable && (root.selectedDevice?.batteryCharging ?? false)
                         name: "bolt"
                         size: phoneIcon.size * 0.45
@@ -911,7 +912,7 @@ PluginComponent {
                     height: phoneIconV.height
                     anchors.horizontalCenter: parent.horizontalCenter
 
-                    DankIcon {
+                    DIcon {
                         id: phoneIconV
                         name: root.hasDevice && root.selectedDevice.isReachable ? "smartphone" : "phonelink_off"
                         size: Theme.barIconSize(root.barThickness)
@@ -924,7 +925,7 @@ PluginComponent {
                         }
                     }
 
-                    DankIcon {
+                    DIcon {
                         visible: root.hasDevice && root.selectedDevice?.isReachable && (root.selectedDevice?.batteryCharging ?? false)
                         name: "bolt"
                         size: phoneIconV.size * 0.45
@@ -1061,7 +1062,7 @@ PluginComponent {
                             radius: 21
                             color: Theme.withAlpha(Theme.primary, 0.2)
 
-                            DankIcon {
+                            DIcon {
                                 name: PhoneConnectService.getDeviceIcon(root.activeDevice) || "smartphone"
                                 size: 22
                                 color: Theme.primary
@@ -1173,14 +1174,14 @@ PluginComponent {
                                     }
                                 }
 
-                                DankRipple {
+                                DRipple {
                                     id: switcherRipple
                                     anchors.fill: parent
                                     cornerRadius: popout.switcherVisible ? width / 2 : (PhoneConnectService.deviceIds.length > 1 ? 8 : Theme.cornerRadius)
                                     rippleColor: Theme.secondary
                                 }
 
-                                DankIcon {
+                                DIcon {
                                     name: "swap_horiz"
                                     size: 20
                                     color: Theme.secondary
@@ -1267,14 +1268,14 @@ PluginComponent {
                                     }
                                 }
 
-                                DankRipple {
+                                DRipple {
                                     id: refreshRipple
                                     anchors.fill: parent
                                     cornerRadius: PhoneConnectService.isRefreshing ? width / 2 : (PhoneConnectService.deviceIds.length > 1 ? 8 : Theme.cornerRadius)
                                     rippleColor: Theme.primary
                                 }
 
-                                DankIcon {
+                                DIcon {
                                     name: "refresh"
                                     size: 20
                                     color: Theme.primary
@@ -1291,7 +1292,7 @@ PluginComponent {
                                     }
                                 }
 
-                                DankSpinner {
+                                DSpinner {
                                     anchors.centerIn: parent
                                     size: 18
                                     color: Theme.primary
@@ -1753,7 +1754,7 @@ PluginComponent {
                                             return "";
                                         }
 
-                                        DankIcon {
+                                        DIcon {
                                             anchors.centerIn: parent
                                             name: "music_note"
                                             size: 16
@@ -1823,7 +1824,7 @@ PluginComponent {
 
                                         property string activeArtUrl: root.phoneMprisPlayer ? TrackArtService.getArtworkUrl(root.phoneMprisPlayer) : ""
 
-                                        DankCircularImage {
+                                        DCircularImage {
                                             id: albumArt
                                             anchors.fill: parent
                                             imageSource: smallThumbnailContainer.activeArtUrl
@@ -1831,7 +1832,7 @@ PluginComponent {
                                             visible: smallThumbnailContainer.activeArtUrl !== ""
                                         }
 
-                                        DankIcon {
+                                        DIcon {
                                             anchors.centerIn: parent
                                             name: "music_note"
                                             size: 32
@@ -2135,7 +2136,7 @@ PluginComponent {
                                     spacing: Theme.spacingXS
                                     width: parent.width
 
-                                    DankIcon {
+                                    DIcon {
                                         name: "image"
                                         size: 16
                                         color: Theme.surfaceText
@@ -2182,7 +2183,7 @@ PluginComponent {
                                             border.width: 1
                                             border.color: Theme.withAlpha(Theme.surfaceVariantText, 0.08)
 
-                                            DankIcon {
+                                            DIcon {
                                                 name: "image"
                                                 size: 20
                                                 color: Theme.withAlpha(Theme.surfaceVariantText, 0.25)
@@ -2215,7 +2216,7 @@ PluginComponent {
                                     bottomPadding: Theme.spacingM
                                     topPadding: Theme.spacingM
 
-                                    DankIcon {
+                                    DIcon {
                                         name: "image_not_supported"
                                         size: 32
                                         color: Theme.withAlpha(Theme.surfaceText, 0.4)
@@ -2442,7 +2443,7 @@ PluginComponent {
                                                         }
                                                     }
 
-                                                    DankIcon {
+                                                    DIcon {
                                                         name: "image"
                                                         size: 20
                                                         color: Theme.withAlpha(Theme.surfaceVariantText, 0.25)
@@ -2535,7 +2536,7 @@ PluginComponent {
                                                 }
                                             }
 
-                                            DankRipple {
+                                            DRipple {
                                                 id: imageRipple
                                                 anchors.fill: parent
                                                 cornerRadius: imageItem.tlr
@@ -2577,7 +2578,7 @@ PluginComponent {
                                                     border.color: Theme.withAlpha(Theme.outline, 0.2)
                                                 }
 
-                                                DankIcon {
+                                                DIcon {
                                                     name: "send"
                                                     size: 14
                                                     anchors.centerIn: parent

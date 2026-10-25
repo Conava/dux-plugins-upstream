@@ -1,6 +1,7 @@
 import QtQuick
 import qs.Common
 import qs.Widgets
+import qs.DCommon.Widgets
 
 StyledRect {
     id: root
@@ -19,7 +20,7 @@ StyledRect {
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: Theme.spacingS
 
-            DankIcon {
+            DIcon {
                 name: "error"
                 size: Theme.iconSize
                 color: Theme.error

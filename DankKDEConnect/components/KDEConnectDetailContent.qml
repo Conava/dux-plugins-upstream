@@ -8,6 +8,7 @@ import QtQuick.Effects
 import QtQuick.Shapes
 import qs.Modules.Plugins
 import Quickshell.Services.Mpris
+import qs.DCommon.Widgets
 
 // Self-contained CC detail content — reads device from PhoneConnectService directly
 // so it works in the CC panel where the plugin instance has no pluginService/pluginData.
@@ -177,7 +178,7 @@ Item {
                     radius: 21
                     color: Theme.withAlpha(Theme.primary, 0.2)
 
-                    DankIcon {
+                    DIcon {
                         name: PhoneConnectService.getDeviceIcon(root.activeDevice) || "smartphone"
                         size: 22
                         color: Theme.primary
@@ -286,14 +287,14 @@ Item {
                             }
                         }
 
-                        DankRipple {
+                        DRipple {
                             id: detailSwitcherRipple
                             anchors.fill: parent
                             cornerRadius: root.switcherVisible ? width / 2 : (PhoneConnectService.deviceIds.length > 1 ? 12 : Theme.cornerRadius)
                             rippleColor: Theme.secondary
                         }
 
-                        DankIcon {
+                        DIcon {
                             name: "swap_horiz"
                             size: 20
                             color: Theme.secondary
@@ -380,14 +381,14 @@ Item {
                             }
                         }
 
-                        DankRipple {
+                        DRipple {
                             id: detailRefreshRipple
                             anchors.fill: parent
                             cornerRadius: PhoneConnectService.isRefreshing ? width / 2 : (PhoneConnectService.deviceIds.length > 1 ? 12 : Theme.cornerRadius)
                             rippleColor: Theme.primary
                         }
 
-                        DankIcon {
+                        DIcon {
                             name: "refresh"
                             size: 20
                             color: Theme.primary
@@ -404,7 +405,7 @@ Item {
                             }
                         }
 
-                        DankSpinner {
+                        DSpinner {
                             anchors.centerIn: parent
                             size: 18
                             color: Theme.primary
@@ -860,7 +861,7 @@ Item {
                     spacing: Theme.spacingXS
                     width: parent.width
 
-                    DankIcon {
+                    DIcon {
                         name: "image"
                         size: 16
                         color: Theme.surfaceText
@@ -1148,7 +1149,7 @@ Item {
                                 }
                             }
 
-                            DankRipple {
+                            DRipple {
                                 id: imageRipple
                                 anchors.fill: parent
                                 cornerRadius: imageItem.tlr
@@ -1190,14 +1191,14 @@ Item {
                                     border.color: Theme.withAlpha(Theme.outline, 0.2)
                                 }
 
-                                DankRipple {
+                                DRipple {
                                     id: sendRipple
                                     anchors.fill: sendBtnBg
                                     cornerRadius: sendBtnBg.radius
                                     rippleColor: Theme.primary
                                 }
 
-                                DankIcon {
+                                DIcon {
                                     name: "send"
                                     size: 14
                                     anchors.centerIn: parent
@@ -1278,7 +1279,7 @@ Item {
                             return "";
                         }
 
-                        DankIcon {
+                        DIcon {
                             anchors.centerIn: parent
                             name: "music_note"
                             size: 16
@@ -1348,7 +1349,7 @@ Item {
 
                         property string activeArtUrl: root.pluginRoot.phoneMprisPlayer ? TrackArtService.getArtworkUrl(root.pluginRoot.phoneMprisPlayer) : ""
 
-                        DankCircularImage {
+                        DCircularImage {
                             id: albumArt
                             anchors.fill: parent
                             imageSource: smallThumbnailContainer.activeArtUrl
@@ -1356,7 +1357,7 @@ Item {
                             visible: smallThumbnailContainer.activeArtUrl !== ""
                         }
 
-                        DankIcon {
+                        DIcon {
                             anchors.centerIn: parent
                             name: "music_note"
                             size: 32

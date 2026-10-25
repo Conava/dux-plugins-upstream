@@ -5,6 +5,7 @@ import qs.Common
 import qs.Services
 import qs.Widgets
 import qs.Modules.Plugins
+import qs.DCommon.Widgets
 
 PluginComponent {
     id: root
@@ -344,7 +345,7 @@ PluginComponent {
             spacing: Theme.spacingXS
             anchors.verticalCenter: parent.verticalCenter
 
-            DankIcon {
+            DIcon {
                 name: root.getStateIcon()
                 size: Theme.barIconSize(root.barThickness, undefined, root.barConfig?.maximizeWidgetIcons, root.barConfig?.iconScale)
                 color: root.getStateColor()
@@ -369,7 +370,7 @@ PluginComponent {
             spacing: Theme.hairline(root.dpr)
             anchors.horizontalCenter: parent.horizontalCenter
 
-            DankIcon {
+            DIcon {
                 name: root.getStateIcon()
                 size: Theme.barIconSize(root.barThickness, undefined, root.barConfig?.maximizeWidgetIcons, root.barConfig?.iconScale)
                 color: root.getStateColor()
@@ -508,7 +509,7 @@ PluginComponent {
                         radius: 32
                         color: playArea.containsMouse ? Qt.rgba(root.getStateColor().r, root.getStateColor().g, root.getStateColor().b, 0.2) : "transparent"
 
-                        DankIcon {
+                        DIcon {
                             anchors.centerIn: parent
                             name: globalIsRunning.value ? "pause" : "play_arrow"
                             size: 32
@@ -530,7 +531,7 @@ PluginComponent {
                         radius: 32
                         color: resetArea.containsMouse ? Theme.surfaceContainerHighest : "transparent"
 
-                        DankIcon {
+                        DIcon {
                             anchors.centerIn: parent
                             name: "refresh"
                             size: 24
@@ -564,21 +565,21 @@ PluginComponent {
 
                         property real buttonWidth: (width - spacing * 2) / 3
 
-                        DankButton {
+                        DButton {
                             text: "Work"
                             iconName: "work"
                             width: quickActionsRow.buttonWidth
                             onClicked: root.startWork(false)
                         }
 
-                        DankButton {
+                        DButton {
                             text: "Short Break"
                             iconName: "coffee"
                             width: quickActionsRow.buttonWidth
                             onClicked: root.startShortBreak(false)
                         }
 
-                        DankButton {
+                        DButton {
                             text: "Long Break"
                             iconName: "weekend"
                             width: quickActionsRow.buttonWidth
@@ -602,7 +603,7 @@ PluginComponent {
                         Row {
                             spacing: Theme.spacingM
 
-                            DankIcon {
+                            DIcon {
                                 name: "check_circle"
                                 size: Theme.iconSize
                                 color: Theme.primary

@@ -2,6 +2,7 @@ import QtQuick
 import qs.Common
 import qs.Widgets
 import "../services"
+import qs.DCommon.Widgets
 
 StyledRect {
     id: root
@@ -80,7 +81,7 @@ StyledRect {
             root.clicked()
     }
 
-    DankRipple {
+    DRipple {
         id: cardRipple
         anchors.fill: parent
         cornerRadius: root.isSelected ? root.height / 2 : (root.isFirst || root.isLast ? Theme.cornerRadius : 4)
@@ -100,7 +101,7 @@ StyledRect {
             width: parent.width
             spacing: Theme.spacingM
 
-            DankIcon {
+            DIcon {
                 name: PhoneConnectService.getDeviceIcon(root.device)
                 size: Theme.iconSize + 4
                 color: root.device?.isReachable ? Theme.primary : Theme.surfaceVariantText
@@ -138,7 +139,7 @@ StyledRect {
                     visible: root.device && root.device.batteryCharge >= 0
                     spacing: Theme.spacingXS
 
-                    DankIcon {
+                    DIcon {
                         name: PhoneConnectService.getBatteryIcon(root.device)
                         size: Theme.iconSize - 4
                         color: root.device?.batteryCharging ? Theme.primary : Theme.surfaceVariantText
@@ -153,7 +154,7 @@ StyledRect {
                     }
                 }
 
-                DankIcon {
+                DIcon {
                     visible: PhoneConnectService.getNetworkIcon(root.device) !== ""
                     name: PhoneConnectService.getNetworkIcon(root.device)
                     size: Theme.iconSize - 4
@@ -304,13 +305,13 @@ StyledRect {
             visible: root.device?.isPairRequestedByPeer
             spacing: Theme.spacingS
 
-            DankButton {
+            DButton {
                 text: I18n.trFor("dankKDEConnect", "Accept", "KDE Connect accept pairing button")
                 iconName: "check"
                 onClicked: root.action("acceptPair")
             }
 
-            DankButton {
+            DButton {
                 text: I18n.trFor("dankKDEConnect", "Reject", "KDE Connect reject pairing button")
                 iconName: "close"
                 onClicked: root.action("rejectPair")
@@ -321,7 +322,7 @@ StyledRect {
             visible: root.device?.isReachable && !root.device?.isPaired && !root.device?.isPairRequestedByPeer
             spacing: Theme.spacingS
 
-            DankButton {
+            DButton {
                 text: I18n.trFor("dankKDEConnect", "Request Pairing", "KDE Connect request pairing button")
                 iconName: "link"
                 onClicked: root.action("pair")

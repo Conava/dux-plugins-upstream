@@ -5,6 +5,7 @@ import qs.Services
 import qs.Widgets
 import qs.Modules.Plugins
 import "AnsiParser.js" as AnsiParser
+import qs.DCommon.Widgets
 
 PluginComponent {
     id: root
@@ -205,7 +206,7 @@ PluginComponent {
                 id: contentRow
                 spacing: Theme.spacingXS
 
-                DankIcon {
+                DIcon {
                     name: root.displayIcon
                     size: Theme.iconSize - 6
                     color: Theme.surfaceText
@@ -247,7 +248,7 @@ PluginComponent {
                 id: contentColumn
                 spacing: Theme.spacingXS
 
-                DankIcon {
+                DIcon {
                     name: root.displayIcon
                     size: Theme.iconSize - 6
                     color: Theme.surfaceText

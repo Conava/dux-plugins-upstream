@@ -8,6 +8,7 @@ import qs.Services
 import qs.Services
 import "./services"
 import QtQuick.Dialogs
+import qs.DCommon.Widgets
 
 PluginSettings {
     id: root
@@ -211,7 +212,7 @@ PluginSettings {
                 RowLayout {
                     width: parent.width
                     spacing: Theme.spacingM
-                    DankIcon { 
+                    DIcon { 
                         name: PhoneConnectService.available ? "check_circle" : "error"
                         size: 22
                         color: PhoneConnectService.available ? Theme.success : Theme.error
@@ -234,7 +235,7 @@ PluginSettings {
                             wrapMode: Text.WordWrap
                         }
                     }
-                    DankButton {
+                    DButton {
                         visible: PhoneConnectService.available
                         text: "Refresh"
                         iconName: "refresh"
@@ -277,7 +278,7 @@ PluginSettings {
                                 anchors.leftMargin: Theme.spacingS
                                 spacing: Theme.spacingS
 
-                                DankIcon {
+                                DIcon {
                                     name: PhoneConnectService.getDeviceIcon(device)
                                     size: Theme.iconSize
                                     color: device?.isReachable ? Theme.primary : Theme.surfaceVariantText
@@ -310,7 +311,7 @@ PluginSettings {
                                 anchors.rightMargin: Theme.spacingS
                                 spacing: Theme.spacingXS
 
-                                DankIcon {
+                                DIcon {
                                     name: PhoneConnectService.getBatteryIcon(device)
                                     size: Theme.iconSize - 4
                                     color: device?.batteryCharging ? Theme.success : Theme.surfaceVariantText
@@ -370,7 +371,7 @@ PluginSettings {
                         width: parent.width
                         spacing: Theme.spacingXS
 
-                        DankIcon {
+                        DIcon {
                             name: PhoneConnectService.getDeviceIcon(deviceSettingsRect.device)
                             size: 16
                             color: Theme.surfaceText
@@ -400,7 +401,7 @@ PluginSettings {
                         Row {
                             width: parent.width
                             spacing: Theme.spacingM
-                            DankIcon { name: "image"; size: 22; anchors.verticalCenter: parent.verticalCenter; opacity: 0.8 }
+                            DIcon { name: "image"; size: 22; anchors.verticalCenter: parent.verticalCenter; opacity: 0.8 }
                             Column {
                                 width: Math.max(0, parent.width - 22 - Theme.spacingM)
                                 spacing: Theme.spacingXXS
@@ -413,7 +414,7 @@ PluginSettings {
                             width: parent.width
                             spacing: Theme.spacingS
 
-                            DankTextField {
+                            DTextField {
                                 id: customImageField
                                 Layout.fillWidth: true
                                 placeholderText: "Absolute path or URL"
@@ -447,7 +448,7 @@ PluginSettings {
                                         border.color: Theme.withAlpha(Theme.primary, browseMA.containsMouse ? 0.3 : 0.15)
                                     }
 
-                                    DankRipple {
+                                    DRipple {
                                         anchors.fill: parent
                                         cornerRadius: Theme.cornerRadius
                                         rippleColor: Theme.primary
@@ -456,7 +457,7 @@ PluginSettings {
                                     Row {
                                         anchors.centerIn: parent
                                         spacing: Theme.spacingXXS
-                                        DankIcon {
+                                        DIcon {
                                             name: "folder"
                                             size: 16
                                             color: Theme.primary
@@ -495,7 +496,7 @@ PluginSettings {
                         Row {
                             width: parent.width
                             spacing: Theme.spacingM
-                            DankIcon { name: "folder"; size: 22; anchors.verticalCenter: parent.verticalCenter; opacity: 0.8 }
+                            DIcon { name: "folder"; size: 22; anchors.verticalCenter: parent.verticalCenter; opacity: 0.8 }
                             Column {
                                 width: Math.max(0, parent.width - 22 - Theme.spacingM)
                                 spacing: Theme.spacingXXS
@@ -508,7 +509,7 @@ PluginSettings {
                             width: parent.width
                             spacing: Theme.spacingS
 
-                            DankTextField {
+                            DTextField {
                                 id: recentImagesPathField
                                 Layout.fillWidth: true
                                 placeholderText: "e.g. ~/Pictures or ~/Screenshots"
@@ -526,7 +527,7 @@ PluginSettings {
                                 }
                             }
 
-                            DankButton {
+                            DButton {
                                 iconName: "folder"
                                 text: "Browse"
                                 Layout.alignment: Qt.AlignVCenter
@@ -555,7 +556,7 @@ PluginSettings {
                         Row {
                             width: parent.width
                             spacing: Theme.spacingM
-                            DankIcon { name: "devices"; size: 22; anchors.verticalCenter: parent.verticalCenter; opacity: 0.8 }
+                            DIcon { name: "devices"; size: 22; anchors.verticalCenter: parent.verticalCenter; opacity: 0.8 }
                             Column {
                                 width: Math.max(0, parent.width - 22 - Theme.spacingM)
                                 spacing: Theme.spacingXXS
@@ -607,7 +608,7 @@ PluginSettings {
                     width: parent.width
                     spacing: Theme.spacingS
 
-                    DankToggle {
+                    DToggle {
                         id: chargingAnimToggle
                         width: parent.width
                         text: "Show Charging Fill"
@@ -621,7 +622,7 @@ PluginSettings {
                         }
                     }
 
-                    DankToggle {
+                    DToggle {
                         id: clipboardActionToggle
                         width: parent.width
                         text: "Show Clipboard Quick Action"
@@ -635,7 +636,7 @@ PluginSettings {
                         }
                     }
 
-                    DankToggle {
+                    DToggle {
                         id: showOngoingMediaToggle
                         width: parent.width
                         text: "Show Ongoing Media"
@@ -649,7 +650,7 @@ PluginSettings {
                         }
                     }
 
-                    DankToggle {
+                    DToggle {
                         id: showDevicePlaceholderToggle
                         width: parent.width
                         text: "Show Device Image Placeholder"
@@ -663,7 +664,7 @@ PluginSettings {
                         }
                     }
 
-                    DankToggle {
+                    DToggle {
                         id: scanSubdirectoriesToggle
                         width: parent.width
                         text: "Scan Subdirectories for Images"
@@ -691,7 +692,7 @@ PluginSettings {
                     RowLayout {
                         width: parent.width
                         spacing: Theme.spacingM
-                        DankIcon { name: "photo_library"; size: 22; Layout.alignment: Qt.AlignVCenter; opacity: 0.8 }
+                        DIcon { name: "photo_library"; size: 22; Layout.alignment: Qt.AlignVCenter; opacity: 0.8 }
                         Column {
                             Layout.fillWidth: true
                             Layout.alignment: Qt.AlignVCenter
@@ -716,14 +717,14 @@ PluginSettings {
                             Behavior on opacity { NumberAnimation { duration: 250 } }
                             Behavior on scale { NumberAnimation { duration: 250; easing.type: Easing.OutBack } }
 
-                            DankRipple { 
+                            DRipple { 
                                 id: limitRip
                                 anchors.fill: parent
                                 cornerRadius: parent.radius
                                 rippleColor: Theme.primary 
                             }
 
-                            DankIcon {
+                            DIcon {
                                 name: "restart_alt"
                                 size: 18
                                 anchors.centerIn: parent
@@ -755,7 +756,7 @@ PluginSettings {
                         easing.type: Easing.OutCubic
                     }
 
-                    DankSlider {
+                    DSlider {
                         id: limitSlider
                         property int defaultValue: 4
                         property string settingKey: "maxRecentImages"
@@ -798,7 +799,7 @@ PluginSettings {
                     RowLayout {
                         width: parent.width
                         spacing: Theme.spacingM
-                        DankIcon { name: "sync"; size: 22; Layout.alignment: Qt.AlignVCenter; opacity: 0.8 }
+                        DIcon { name: "sync"; size: 22; Layout.alignment: Qt.AlignVCenter; opacity: 0.8 }
                         Column {
                             Layout.fillWidth: true
                             Layout.alignment: Qt.AlignVCenter
@@ -824,14 +825,14 @@ PluginSettings {
                             Behavior on opacity { NumberAnimation { duration: 250 } }
                             Behavior on scale { NumberAnimation { duration: 250; easing.type: Easing.OutBack } }
 
-                            DankRipple {
+                            DRipple {
                                 id: intervalRip
                                 anchors.fill: parent
                                 cornerRadius: parent.radius
                                 rippleColor: Theme.primary 
                             }
 
-                            DankIcon {
+                            DIcon {
                                 name: "restart_alt"
                                 size: 18
                                 anchors.centerIn: parent
@@ -863,7 +864,7 @@ PluginSettings {
                         easing.type: Easing.OutCubic
                     }
 
-                    DankSlider {
+                    DSlider {
                         id: updateIntervalSlider
                         property int defaultValue: 30
                         property string settingKey: "stateUpdateInterval"
@@ -924,32 +925,32 @@ PluginSettings {
 
                     Row {
                         spacing: Theme.spacingS
-                        DankIcon { name: "phone_in_talk"; size: 16; color: Theme.surfaceVariantText }
+                        DIcon { name: "phone_in_talk"; size: 16; color: Theme.surfaceVariantText }
                         StyledText { text: "Ring - Make your phone ring to find it"; font.pixelSize: Theme.fontSizeSmall; color: Theme.surfaceVariantText }
                     }
                     Row {
                         spacing: Theme.spacingS
-                        DankIcon { name: "notifications_active"; size: 16; color: Theme.surfaceVariantText }
+                        DIcon { name: "notifications_active"; size: 16; color: Theme.surfaceVariantText }
                         StyledText { text: "Ping - Send a notification to the device"; font.pixelSize: Theme.fontSizeSmall; color: Theme.surfaceVariantText }
                     }
                     Row {
                         spacing: Theme.spacingS
-                        DankIcon { name: "content_paste"; size: 16; color: Theme.surfaceVariantText }
+                        DIcon { name: "content_paste"; size: 16; color: Theme.surfaceVariantText }
                         StyledText { text: "Clipboard - Send clipboard to the device"; font.pixelSize: Theme.fontSizeSmall; color: Theme.surfaceVariantText }
                     }
                     Row {
                         spacing: Theme.spacingS
-                        DankIcon { name: "share"; size: 16; color: Theme.surfaceVariantText }
+                        DIcon { name: "share"; size: 16; color: Theme.surfaceVariantText }
                         StyledText { text: "Share - Send URLs or text to the device"; font.pixelSize: Theme.fontSizeSmall; color: Theme.surfaceVariantText }
                     }
                     Row {
                         spacing: Theme.spacingS
-                        DankIcon { name: "folder"; size: 16; color: Theme.surfaceVariantText }
+                        DIcon { name: "folder"; size: 16; color: Theme.surfaceVariantText }
                         StyledText { text: "Browse - Open device file browser (SFTP)"; font.pixelSize: Theme.fontSizeSmall; color: Theme.surfaceVariantText }
                     }
                     Row {
                         spacing: Theme.spacingS
-                        DankIcon { name: "sms"; size: 16; color: Theme.surfaceVariantText }
+                        DIcon { name: "sms"; size: 16; color: Theme.surfaceVariantText }
                         StyledText { text: "SMS - Send text messages or open SMS app"; font.pixelSize: Theme.fontSizeSmall; color: Theme.surfaceVariantText }
                     }
                 }

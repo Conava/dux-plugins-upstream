@@ -4,6 +4,7 @@ import qs.Common
 import qs.Modals.FileBrowser
 import qs.Widgets
 import qs.Services
+import qs.DCommon.Widgets
 
 StyledRect {
     id: root
@@ -81,7 +82,7 @@ StyledRect {
             anchors.centerIn: parent
             spacing: Theme.spacingXS
 
-            DankIcon {
+            DIcon {
                 name: actionRoot.iconName
                 size: 16
                 color: (actionRoot.isEnabled && actionArea.containsMouse) ? Theme.primary : Theme.surfaceVariantText
@@ -109,7 +110,7 @@ StyledRect {
             }
         }
 
-        DankRipple {
+        DRipple {
             id: actionRipple
             anchors.fill: parent
             cornerRadius: parent.radius
@@ -267,7 +268,7 @@ StyledRect {
                 anchors.left: parent.left
                 anchors.leftMargin: 4
 
-                DankIcon {
+                DIcon {
                     name: "share"
                     size: 14
                     color: Theme.surfaceText
@@ -312,7 +313,7 @@ StyledRect {
                         }
                     }
 
-                    DankIcon {
+                    DIcon {
                         anchors.centerIn: parent
                         name: "close"
                         size: 16
@@ -327,7 +328,7 @@ StyledRect {
                         }
                     }
 
-                    DankRipple {
+                    DRipple {
                         id: closeRipple
                         anchors.fill: parent
                         cornerRadius: parent.radius
@@ -368,7 +369,7 @@ StyledRect {
                 width: parent.width
                 spacing: Theme.spacingS
 
-                DankTextField {
+                DTextField {
                     id: shareInput
                     Layout.fillWidth: true
                     placeholderText: I18n.trFor("dankKDEConnect", "Enter URI or text to share", "KDE Connect share input placeholder") + "..."

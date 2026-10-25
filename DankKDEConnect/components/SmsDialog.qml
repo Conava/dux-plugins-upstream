@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import qs.Common
 import qs.Widgets
+import qs.DCommon.Widgets
 
 StyledRect {
     id: root
@@ -133,7 +134,7 @@ StyledRect {
                 anchors.left: parent.left
                 anchors.leftMargin: 4
 
-                DankIcon {
+                DIcon {
                     name: "sms"
                     size: 14
                     color: Theme.surfaceText
@@ -178,7 +179,7 @@ StyledRect {
                         }
                     }
 
-                    DankIcon {
+                    DIcon {
                         anchors.centerIn: parent
                         name: "close"
                         size: 16
@@ -193,7 +194,7 @@ StyledRect {
                         }
                     }
 
-                    DankRipple {
+                    DRipple {
                         id: smsCloseRipple
                         anchors.fill: parent
                         cornerRadius: parent.radius
@@ -230,7 +231,7 @@ StyledRect {
                 }
             }
 
-            DankTextField {
+            DTextField {
                 id: phoneInput
                 width: parent.width
                 placeholderText: I18n.trFor("dankKDEConnect", "Phone number", "KDE Connect SMS phone input placeholder") + "..."
@@ -243,7 +244,7 @@ StyledRect {
                 }
             }
 
-            DankTextField {
+            DTextField {
                 id: messageInput
                 width: parent.width
                 placeholderText: I18n.trFor("dankKDEConnect", "Message", "KDE Connect SMS message input placeholder") + "..."
@@ -299,7 +300,7 @@ StyledRect {
                         anchors.centerIn: parent
                         spacing: Theme.spacingXS
 
-                        DankIcon {
+                        DIcon {
                             name: "send"
                             size: 16
                             color: (sendSmsBtn.isEnabled && (sendSmsArea.containsMouse || sendSmsBtn.activeFocus)) ? Theme.primary : Theme.surfaceVariantText
@@ -329,7 +330,7 @@ StyledRect {
                         }
                     }
 
-                    DankRipple {
+                    DRipple {
                         id: sendSmsRipple
                         anchors.fill: parent
                         cornerRadius: parent.radius // Fallback, StyledRect handles corners manually but ripple needs it
@@ -409,7 +410,7 @@ StyledRect {
                         anchors.centerIn: parent
                         spacing: Theme.spacingXS
 
-                        DankIcon {
+                        DIcon {
                             name: "open_in_new"
                             size: 16
                             color: (openAppArea.containsMouse || openAppBtn.activeFocus) ? Theme.primary : Theme.surfaceVariantText
@@ -439,7 +440,7 @@ StyledRect {
                         }
                     }
 
-                    DankRipple {
+                    DRipple {
                         id: openAppRipple
                         anchors.fill: parent
                         cornerRadius: parent.radius
