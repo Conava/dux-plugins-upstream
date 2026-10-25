@@ -279,7 +279,7 @@ PluginComponent {
     function formatTime(seconds, isVertical = false) {
         const mins = Math.floor(seconds / 60);
         const secs = seconds % 60;
-        return isVertical ? mins + "\n" + (secs < 10 ? "0" : "") + secs : mins + ":" + (secs < 10 ? "0" : "") + secs;
+        return isVertical ? String(mins).padStart(2, "0") + "\n" + String(secs).padStart(2, "0") : String(mins).padStart(2, "0") + ":" + String(secs).padStart(2, "0");
     }
 
     function getStateColor() {
@@ -342,19 +342,22 @@ PluginComponent {
     horizontalBarPill: Component {
         Row {
             spacing: Theme.spacingXS
+            anchors.verticalCenter: parent.verticalCenter
 
             DankIcon {
                 name: root.getStateIcon()
-                size: Theme.iconSize - 6
+                size: Theme.barIconSize(root.barThickness, undefined, root.barConfig?.maximizeWidgetIcons, root.barConfig?.iconScale)
                 color: root.getStateColor()
                 anchors.verticalCenter: parent.verticalCenter
             }
 
-            StyledText {
+            NumericText {
                 text: root.formatTime(globalRemainingSeconds.value)
-                font.pixelSize: Theme.fontSizeSmall
+                font.features: ({ "tnum": 1 })
+                isMonospace: false
+                font.pixelSize: Theme.barTextSize(root.barThickness, root.barConfig?.fontScale, root.barConfig?.maximizeWidgetText)
                 font.weight: Font.Medium
-                color: Theme.surfaceVariantText
+                color: Theme.widgetTextColor
                 anchors.verticalCenter: parent.verticalCenter
                 visible: root.showBarText
             }
@@ -363,22 +366,42 @@ PluginComponent {
 
     verticalBarPill: Component {
         Column {
-            spacing: Theme.spacingXS
+            spacing: Theme.hairline(root.dpr)
+            anchors.horizontalCenter: parent.horizontalCenter
 
             DankIcon {
                 name: root.getStateIcon()
-                size: Theme.iconSize - 6
+                size: Theme.barIconSize(root.barThickness, undefined, root.barConfig?.maximizeWidgetIcons, root.barConfig?.iconScale)
                 color: root.getStateColor()
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
-            StyledText {
-                text: root.formatTime(globalRemainingSeconds.value, true)
-                font.pixelSize: Theme.fontSizeSmall
-                font.weight: Font.Medium
-                color: Theme.surfaceVariantText
-                anchors.horizontalCenter: parent.horizontalCenter
+            Column {
                 visible: root.showBarText
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 0
+
+                NumericText {
+                    text: String(Math.floor(globalRemainingSeconds.value / 60)).padStart(2, "0")
+                    font.features: ({ "tnum": 1 })
+                    isMonospace: false
+                    font.pixelSize: Theme.barTextSize(root.barThickness, root.barConfig?.fontScale, root.barConfig?.maximizeWidgetText)
+                    font.weight: Font.Medium
+                    color: Theme.widgetTextColor
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                NumericText {
+                    text: String(globalRemainingSeconds.value % 60).padStart(2, "0")
+                    font.features: ({ "tnum": 1 })
+                    isMonospace: false
+                    font.pixelSize: Theme.barTextSize(root.barThickness, root.barConfig?.fontScale, root.barConfig?.maximizeWidgetText)
+                    font.weight: Font.Medium
+                    color: Theme.widgetTextColor
+                    horizontalAlignment: Text.AlignHCenter
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
             }
         }
     }
